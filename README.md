@@ -7,7 +7,7 @@ Solução analítica de inteligência de negócios desenvolvida para transformar
 ## 📌 Status do Projeto
 
 - [x] **Etapa 1:** Extração, Limpeza de Dados e Cálculo da Matriz RFM em Python
-- [ ] **Etapa 2:** Modelagem de Banco de Dados Relacional (MySQL - Star Schema)
+- [x] **Etapa 2:** Modelagem Dimensional e SQL Analítico para E-Commerce (MySQL - Star Schema)
 - [ ] **Etapa 3:** Desenvolvimento do Dashboard Executivo Interativo (Power BI)
 
 ---
@@ -26,7 +26,7 @@ Mapear o desempenho de vendas da empresa e categorizar os clientes com base no s
 * **Python 3.13** (Pandas, OpenPyXL, NumPy)
 * **Jupyter Notebook** (VS Code)
 * **Git & GitHub** (Controle de versão)
-* **MySQL / DBeaver** *(Próxima etapa)*
+* **MySQL / DBeaver**
 * **Power BI** *(Próxima etapa)*
 
 ---
@@ -48,6 +48,28 @@ Nesta primeira fase, tratamos uma base transacional contendo mais de **1 milhão
 
 ---
 
+## 📊 Fase 2: Modelagem Dimensional & SQL Analítico para E-Commerce (Concluída)
+
+Dando sequência ao desenvolvimento do meu projeto end-to-end de Data Analytics, concluí a **Fase 2: Estruturação do Banco de Dados Relacional**.
+
+Após o tratamento e segmentação RFM dos dados transacionais em Python, a missão foi estruturar esse volume em um ambiente pronto para escala e alta performance analítica.
+
+📌 **Principais entregas desta etapa:**
+
+- **Arquitetura Star Schema (Modelo Estrela):** Criação da tabela fato (`fato_vendas` com +425k registros limpos) e tabela dimensão (`dim_clientes_rfm`) no MySQL via DBeaver.
+- **Otimização de Carga:** Resolução de gargalos de *batch insert* e integridade referencial para importação performática dos dados.
+- **Views Analíticas para BI:** Construção de SQL Views (`vw_rfm_executivo`, `vw_analise_clientes`, `vw_vendas_temporais`) para desacoplar a regra de negócio e otimizar as futuras consultas do Dashboard.
+
+**💡 Insight rápido até aqui:**
+
+O cruzamento das tabelas revelou que apenas o segmento de clientes "Campeões" (menos de 10% da base total) responde por mais de **R$ 4,4 milhões** do faturamento total do e-commerce.
+
+### Registro da Modelagem SQL (DBeaver)
+
+![Script de Modelagem Dimensional e SQL Analítico](./assets/script_db_ecommerce.jpeg)
+
+---
+
 ## 📂 Estrutura do Repositório
 
 ```text
@@ -57,6 +79,11 @@ ecommerce-rfm-analytics/
 │   ├── online_retail_II.csv
 │   ├── fato_vendas.csv
 │   └── dim_clientes_rfm.csv
+├── script/                     # Scripts de criação e análise do banco
+│   └── Script_db_ecommerce.sql
+├── assets/                     # Imagens de registro do projeto
+│   ├── notebookCode.jpeg
+│   └── script_db_ecommerce.jpeg
 ├── 01_limpeza_e_rfm.ipynb      # Notebook com código de ETL e segmentação
 └── README.md                   # Documentação do projeto
 ```
