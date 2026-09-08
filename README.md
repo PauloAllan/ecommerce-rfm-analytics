@@ -8,7 +8,7 @@ Solução analítica de inteligência de negócios desenvolvida para transformar
 
 - [x] **Etapa 1:** Extração, Limpeza de Dados e Cálculo da Matriz RFM em Python
 - [x] **Etapa 2:** Modelagem Dimensional e SQL Analítico para E-Commerce (MySQL - Star Schema)
-- [x] **Etapa 3:** Desenvolvimento do Dashboard Executivo Interativo (Power BI)
+- [ ] **Etapa 3:** Desenvolvimento do Dashboard Executivo Interativo (Power BI) - em andamento
 
 ---
 
@@ -27,13 +27,7 @@ Mapear o desempenho de vendas da empresa e categorizar os clientes com base no s
 * **Jupyter Notebook** (VS Code)
 * **Git & GitHub** (Controle de versão)
 * **MySQL / DBeaver**
-* **Power BI** (conexão MySQL, modelo semântico e medidas DAX)
-
-## 📊 Etapa 3: Dashboard Power BI (Concluída)
-
-O arquivo [`dashboard/ecommerce-rfm-dashboard.pbix`](./dashboard/ecommerce-rfm-dashboard.pbix) consolida os indicadores comerciais e a segmentação RFM. A conexão, o modelo de dados, as medidas e o procedimento de atualização estão documentados em [`dashboard/README.md`](./dashboard/README.md) e [`dashboard/medidas_dax.md`](./dashboard/medidas_dax.md).
-
-O dashboard utiliza o MySQL como fonte das tabelas `fato_vendas` e `dim_clientes_rfm`, preservando o relacionamento do modelo estrela e permitindo filtros por segmento, país e período.
+* **Power BI** *(Etapa 3 em andamento)*
 
 ---
 
@@ -73,6 +67,12 @@ O cruzamento das tabelas revelou que apenas o segmento de clientes "Campeões" (
 ### Registro da Modelagem SQL (DBeaver)
 
 ![Script de Modelagem Dimensional e SQL Analítico](./assets/script_db_ecommerce.jpeg)
+
+---
+
+## 📊 Etapa 3: Dashboard Power BI (Em andamento)
+
+Foi realizada a conexão inicial do Power BI com o MySQL e criado o arquivo do dashboard. A construção e a validação dos indicadores ainda estão em andamento.
 
 ---
 
