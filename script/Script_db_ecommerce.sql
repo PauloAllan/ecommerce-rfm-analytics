@@ -76,8 +76,6 @@ GROUP BY c.segmento;
 
 -- base granular de cada cliente com suas notas RFM e total gasto, ideal para criar tabelas de perfil e filtros no Power BI.
 
-SQL
-
 CREATE OR REPLACE VIEW vw_analise_clientes AS
 SELECT 
     c.customer_id,
@@ -98,7 +96,7 @@ GROUP BY
     c.monetario, 
     c.rf_score;
 
--- Estrutura as vendas por data e país, permitindo criar gráficos de linha (tendência) e mapas no Dashboard.
+-- Estrutura as vendas por data e país, permitindo criar gráficos de linha (tendência) e mapas
 
 CREATE OR REPLACE VIEW vw_vendas_temporais AS
 SELECT 
