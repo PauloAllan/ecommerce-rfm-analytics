@@ -8,7 +8,7 @@ Solução analítica de inteligência de negócios desenvolvida para transformar
 
 - [x] **Etapa 1:** Extração, Limpeza de Dados e Cálculo da Matriz RFM em Python
 - [x] **Etapa 2:** Modelagem Dimensional e SQL Analítico para E-Commerce (MySQL - Star Schema)
-- [ ] **Etapa 3:** Desenvolvimento do Dashboard Executivo Interativo (Power BI) - em andamento
+- [x] **Etapa 3:** Desenvolvimento do Dashboard Executivo Interativo (Power BI)
 
 ---
 
@@ -27,7 +27,7 @@ Mapear o desempenho de vendas da empresa e categorizar os clientes com base no s
 * **Jupyter Notebook** (VS Code)
 * **Git & GitHub** (Controle de versão)
 * **MySQL / DBeaver**
-* **Power BI** *(Etapa 3 em andamento)*
+* **Power BI Desktop & Power BI Service** (DAX, Power Query)
 
 ---
 
@@ -48,9 +48,7 @@ Nesta primeira fase, tratamos uma base transacional contendo mais de **1 milhão
 
 ---
 
-## 📊 Fase 2: Modelagem Dimensional & SQL Analítico para E-Commerce (Concluída)
-
-Dando sequência ao desenvolvimento do meu projeto end-to-end de Data Analytics, concluí a **Fase 2: Estruturação do Banco de Dados Relacional**.
+## 📊 Etapa 2: Modelagem Dimensional & SQL Analítico (Concluída)
 
 Após o tratamento e segmentação RFM dos dados transacionais em Python, a missão foi estruturar esse volume em um ambiente pronto para escala e alta performance analítica.
 
@@ -58,7 +56,7 @@ Após o tratamento e segmentação RFM dos dados transacionais em Python, a miss
 
 - **Arquitetura Star Schema (Modelo Estrela):** Criação da tabela fato (`fato_vendas` com +425k registros limpos) e tabela dimensão (`dim_clientes_rfm`) no MySQL via DBeaver.
 - **Otimização de Carga:** Resolução de gargalos de *batch insert* e integridade referencial para importação performática dos dados.
-- **Views Analíticas para BI:** Construção de SQL Views (`vw_rfm_executivo`, `vw_analise_clientes`, `vw_vendas_temporais`) para desacoplar a regra de negócio e otimizar as futuras consultas do Dashboard.
+- **Views Analíticas para BI:** Construção de SQL Views (`vw_rfm_executivo`, `vw_analise_clientes`, `vw_vendas_temporais`) para desacoplar a regra de negócio e otimizar as consultas do Dashboard.
 
 **💡 Insight rápido até aqui:**
 
@@ -70,9 +68,20 @@ O cruzamento das tabelas revelou que apenas o segmento de clientes "Campeões" (
 
 ---
 
-## 📊 Etapa 3: Dashboard Power BI (Em andamento)
+## 💻 Etapa 3: Dashboard Executivo Interativo no Power BI (Concluída)
 
-Foi realizada a conexão inicial do Power BI com o MySQL e criado o arquivo do dashboard. A construção e a validação dos indicadores ainda estão em andamento.
+Na fase final, conectamos as *Views* otimizadas do MySQL ao Power BI para construir um painel executivo focado em **storytelling de dados** e **UX/UI profissional** em *Dark Mode*.
+
+📌 **Destaques da Construção:**
+- **Modelagem Relacional (1:N):** Conexão da dimensão de segmentos com a tabela temporal de vendas sem ambiguidades de filtro.
+- **Camada de Inteligência DAX:** Criação de tabela dedicada (`_Medidas`) para cálculo dinâmico de KPIs de negócio (Faturamento Total, Ticket Médio, Total de Pedidos e Clientes Únicos).
+- **Análise Comportamental Integrada:** Visuais interativos permitindo filtrar a tendência temporal de faturamento e a distribuição de clientes por segmento RFM e país.
+
+### Visualização do Dashboard Executivo
+
+![Dashboard Executivo Power BI](./assets/dashboard.png)
+
+🔗 **[Clique aqui para acessar o Dashboard Interativo no Power BI Service](https://app.powerbi.com/view?r=eyJrIjoiYzRkOTYxMDktYzU3My00MzIyLWE1ODEtN2M5NGQwYjkwMTZiIiwidCI6IjQwYmEzNmQ5LTQ0YmEtNGE0Ni1iM2FjLTIxYjFlMGQ0YzE5YiJ9)**
 
 ---
 
@@ -87,9 +96,11 @@ ecommerce-rfm-analytics/
 │   └── dim_clientes_rfm.csv
 ├── script/                     # Scripts de criação e análise do banco
 │   └── Script_db_ecommerce.sql
-├── assets/                     # Imagens de registro do projeto
+├── dashboard/                  # Arquivo do relatório Power BI
+│   └── ecommerce-rfm-dashboard.pbix
+├── assets/                     # Imagens de registro e documentação
 │   ├── notebookCode.jpeg
-│   └── script_db_ecommerce.jpeg
+│   ├── script_db_ecommerce.jpeg
+│   └── dashboard.png
 ├── 01_limpeza_e_rfm.ipynb      # Notebook com código de ETL e segmentação
 └── README.md                   # Documentação do projeto
-```
