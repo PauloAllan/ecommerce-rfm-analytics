@@ -1,5 +1,8 @@
 # E-Commerce RFM Analytics 📊
 
+![Power BI](https://img.shields.io/badge/Power%20BI-Report?style=flat&logo=powerbi&logoColor=white&color=F2C811)
+![Status](https://img.shields.io/badge/status-conclu%C3%ADdo-2E8B57?style=flat)
+
 Solução analítica de inteligência de negócios desenvolvida para transformar dados brutos de transações de e-commerce em insights estratégicos para times de marketing e retenção.
 
 ---
